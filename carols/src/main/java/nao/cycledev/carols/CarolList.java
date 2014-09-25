@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import nao.cycledev.carols.adapter.CarolsAdapter;
+import nao.cycledev.carols.adapter.CarolAdapter;
 import nao.cycledev.carols.repository.CarolMemoryRepository;
 import nao.cycledev.carols.repository.CarolRepository;
 
@@ -20,7 +20,7 @@ public class CarolList extends Fragment {
 
         carolListView = (ListView)view.findViewById(R.id.carolListView);
         CarolRepository repository = new CarolMemoryRepository();
-        CarolsAdapter adapter = new CarolsAdapter(getActivity().getApplicationContext(), repository.getAll());
+        CarolAdapter adapter = new CarolAdapter(getActivity().getApplicationContext(), repository.getAll());
         carolListView.setAdapter(adapter);
         return view;
     }
