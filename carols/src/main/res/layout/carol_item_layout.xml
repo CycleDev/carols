@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+              android:orientation="horizontal"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <EditText
+    <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txtSearch"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/txtCarolTitle"
             android:layout_gravity="center_horizontal"
-            android:editable="true" android:text="Search ..."/>
-
-    <ListView
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/carolListView"/>
-
-
+            android:padding="15dp"/>
 </LinearLayout>
