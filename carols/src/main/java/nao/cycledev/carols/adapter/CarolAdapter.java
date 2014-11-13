@@ -18,7 +18,7 @@ public class CarolAdapter extends BaseAdapter {
 
     public CarolAdapter(Context context, List<Carol> carols) {
         this.carols = carols;
-        layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
@@ -33,23 +33,23 @@ public class CarolAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return ((Carol)carols.get(position)).getId();
+        return ((Carol) carols.get(position)).getId();
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
-        if (view == null){
+        if (view == null) {
             view = layoutInflater.inflate(R.layout.carol_item_layout, parent, false);
         }
 
         Carol carol = getCarol(position);
-        TextView carolTitle = (TextView)view.findViewById(R.id.txtCarolTitle);
+        TextView carolTitle = (TextView) view.findViewById(R.id.txtCarolTitle);
         carolTitle.setText(carol.getTitle());
         return view;
     }
 
-    private Carol getCarol(int position){
-        return (Carol)getItem(position);
+    private Carol getCarol(int position) {
+        return (Carol) getItem(position);
     }
 }

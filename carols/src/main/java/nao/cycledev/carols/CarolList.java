@@ -18,9 +18,9 @@ public class CarolList extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.carol_list_layout, container, false);
 
-        carolListView = (ListView)view.findViewById(R.id.carolListView);
+        carolListView = (ListView) view.findViewById(R.id.carolListView);
         CarolRepository repository = new CarolMemoryRepository();
-        CarolAdapter adapter = new CarolAdapter(getActivity().getApplicationContext(), repository.getAll());
+        CarolAdapter adapter = new CarolAdapter(getActivity().getApplicationContext(), repository.loadCarols());
         carolListView.setAdapter(adapter);
         return view;
     }

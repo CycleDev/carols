@@ -6,12 +6,26 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
+
+        try {
+            FileInputStream file = new FileInputStream("file.txt");
+            file.close();
+
+        } catch (FileNotFoundException e2) {
+
+        } catch (IOException e1) {
+
+        }
     }
 
     @Override

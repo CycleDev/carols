@@ -2,9 +2,23 @@ package nao.cycledev.carols.repository;
 
 import nao.cycledev.carols.model.Carol;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public interface CarolRepository {
+public abstract class CarolRepository {
+    private List<Carol> carols = new ArrayList<Carol>();
 
-    List<Carol> getAll();
+    public List<Carol> getCarols() {
+        return carols;
+    }
+
+    public abstract List<Carol> loadCarols();
+
+    protected void addCarol(Carol carol) {
+        carols.add(carol);
+    }
+
+    protected boolean removeCarol(Carol carol) {
+        return carols.remove(carol);
+    }
 }

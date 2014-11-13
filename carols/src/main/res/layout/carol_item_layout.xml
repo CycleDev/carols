@@ -8,9 +8,6 @@
     <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
             android:id="@+id/txtCarolTitle"
-            android:layout_gravity="center_horizontal"
             android:padding="15dp"/>
 </LinearLayout>
