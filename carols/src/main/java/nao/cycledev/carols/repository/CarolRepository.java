@@ -12,7 +12,7 @@ public abstract class CarolRepository {
         return carols;
     }
 
-    public abstract List<Carol> loadCarols();
+    public abstract void loadCarols();
 
     protected void addCarol(Carol carol) {
         carols.add(carol);
