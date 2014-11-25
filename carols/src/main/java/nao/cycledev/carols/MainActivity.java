@@ -5,27 +5,14 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import nao.cycledev.carols.model.Carol;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements ItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
-
-        try {
-            FileInputStream file = new FileInputStream("file.txt");
-            file.close();
-
-        } catch (FileNotFoundException e2) {
-
-        } catch (IOException e1) {
-
-        }
     }
 
     @Override
@@ -43,6 +30,14 @@ public class MainActivity extends ActionBarActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onCarolSelected(Carol carol) {
+        CarolView fragment = (CarolView)getFragmentManager().findFragmentById(R.id.carol_view);
+        if (fragment != null && fragment.isInLayout()) {
+            fragment.setCarolText(carol.getText());
         }
     }
 }
