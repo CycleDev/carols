@@ -9,16 +9,20 @@ import android.widget.TextView;
 import nao.cycledev.carols.R;
 import nao.cycledev.carols.model.Carol;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class CarolAdapter extends BaseAdapter {
 
     private List<Carol> carols;
+    private ArrayList<Carol> arraylist;
     private LayoutInflater layoutInflater;
 
     public CarolAdapter(Context context, List<Carol> carols) {
         this.carols = carols;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        arraylist.addAll(carols);
     }
 
     @Override
@@ -51,5 +55,22 @@ public class CarolAdapter extends BaseAdapter {
 
     private Carol getCarol(int position) {
         return (Carol) getItem(position);
+    }
+
+    public void filter(String str) {
+        str = str.toLowerCase(Locale.getDefault());
+        carols.clear();
+        if (str.length() == 0) {
+            carols.addAll(arraylist);
+        }
+        else {
+            for (Carol item : arraylist)
+            {
+                if (item.getTitle().toLowerCase(Locale.getDefault()).contains(str)) {
+                    carols.add(item);
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 }

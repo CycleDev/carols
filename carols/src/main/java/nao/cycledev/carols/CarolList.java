@@ -3,10 +3,13 @@ package nao.cycledev.carols;
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import nao.cycledev.carols.adapter.CarolAdapter;
 import nao.cycledev.carols.repository.CarolJsonRepository;
@@ -14,12 +17,15 @@ import nao.cycledev.carols.repository.CarolRepository;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Locale;
 
 public class CarolList extends Fragment {
 
     private ListView carolListView;
     private CarolRepository repository;
     private ItemSelectedListener selectedListener;
+    private EditText search;
+    private CarolAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -35,8 +41,27 @@ public class CarolList extends Fragment {
         repository = new CarolJsonRepository(loadCarolsFile(view));
         repository.loadCarols();
 
-        CarolAdapter adapter = new CarolAdapter(getActivity().getApplicationContext(), repository.getCarols());
+        adapter = new CarolAdapter(getActivity().getApplicationContext(), repository.getCarols());
         carolListView.setAdapter(adapter);
+
+        search = (EditText)view.findViewById(R.id.search);
+        search.addTextChangedListener(new TextWatcher() {
+              @Override
+              public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                  // TODO Auto-generated method stub
+              }
+
+              @Override
+              public void onTextChanged(CharSequence s, int start, int before, int count) {
+                  // TODO Auto-generated method stub
+              }
+
+              @Override
+              public void afterTextChanged(Editable s) {
+                  String text = search.getText().toString().toLowerCase(Locale.getDefault());
+                  adapter.filter(text);
+              }
+        });
 
         return view;
     }
