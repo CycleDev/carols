@@ -5,11 +5,11 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <EditText
+    <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="text|textMultiLine"
-            android:ems="10"
-            android:id="@+id/txtCarolText"/>
+            android:id="@+id/txtCarolText"
+            android:padding="5dp"/>
 
 </LinearLayout>

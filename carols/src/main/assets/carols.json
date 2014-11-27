@@ -4,7 +4,7 @@
             {
                 "id":1,
                 "title":"carol 1",
-                "text":"text 1",
+                "text":"text 1 <b>Bold</b> and <i>Italic</i><br /><p>New line</p>",
                 "info":"info 1"
             },
             {

@@ -16,7 +16,7 @@ import java.util.Locale;
 public class CarolAdapter extends BaseAdapter {
 
     private List<Carol> carols;
-    private ArrayList<Carol> arraylist;
+    private ArrayList<Carol> arraylist = new ArrayList<Carol>();
     private LayoutInflater layoutInflater;
 
     public CarolAdapter(Context context, List<Carol> carols) {
