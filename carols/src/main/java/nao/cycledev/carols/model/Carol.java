@@ -7,6 +7,8 @@ public class Carol {
     private String text;
     private String info;
 
+    public Carol(){}
+
     public Carol(long id, String title, String text, String info) {
         this.id = id;
         this.title = title;

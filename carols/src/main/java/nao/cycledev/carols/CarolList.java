@@ -12,8 +12,8 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import nao.cycledev.carols.adapter.CarolAdapter;
-import nao.cycledev.carols.repository.CarolJsonRepository;
 import nao.cycledev.carols.repository.CarolRepository;
+import nao.cycledev.carols.repository.CarolXmlRepository;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,7 +38,7 @@ public class CarolList extends Fragment {
             }
         });
 
-        repository = new CarolJsonRepository(loadCarolsFile(view));
+        repository = new CarolXmlRepository(loadCarolsFile(view));
         repository.loadCarols();
 
         adapter = new CarolAdapter(getActivity().getApplicationContext(), repository.getCarols());
@@ -85,7 +85,7 @@ public class CarolList extends Fragment {
     private String loadCarolsFile(View view) {
         InputStream is = null;
         try {
-            is = view.getContext().getAssets().open("carols.json");
+            is = view.getContext().getAssets().open("carols.xml");
 
             int size = is.available();
 
