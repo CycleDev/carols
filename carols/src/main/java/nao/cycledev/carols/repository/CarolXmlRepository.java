@@ -4,8 +4,6 @@ import nao.cycledev.carols.model.Carol;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
-
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
 
@@ -20,11 +18,11 @@ public class CarolXmlRepository extends CarolRepository {
     @Override
     public void loadCarols() {
 
-        XmlPullParserFactory factory = null;
-        XmlPullParser parser = null;
+        XmlPullParserFactory factory ;
+        XmlPullParser parser;
         Carol carol = null;
-        String text;
-        String tagname;
+        String text = "";
+        String tagname = "";
 
         try {
             factory = XmlPullParserFactory.newInstance();

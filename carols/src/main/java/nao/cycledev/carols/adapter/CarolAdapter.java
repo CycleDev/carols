@@ -58,7 +58,7 @@ public class CarolAdapter extends BaseAdapter {
     }
 
     public void filter(String str) {
-        str = str.toLowerCase(Locale.getDefault());
+        str = str.toLowerCase();
         carols.clear();
         if (str.length() == 0) {
             carols.addAll(arraylist);
@@ -66,7 +66,7 @@ public class CarolAdapter extends BaseAdapter {
         else {
             for (Carol item : arraylist)
             {
-                if (item.getTitle().toLowerCase(Locale.getDefault()).contains(str)) {
+                if (item.getTitle().toLowerCase().contains(str)) {
                     carols.add(item);
                 }
             }

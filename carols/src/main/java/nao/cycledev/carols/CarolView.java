@@ -2,8 +2,6 @@ package nao.cycledev.carols;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +19,8 @@ public class CarolView extends Fragment {
     }
 
     public void setCarolText(String carolText) {
-        Spanned str = Html.fromHtml(carolText);
-        txtCarolText.setText(str);
+        //Spanned str = Html.fromHtml(carolText);
+        txtCarolText.setText(carolText);
     }
 
 }

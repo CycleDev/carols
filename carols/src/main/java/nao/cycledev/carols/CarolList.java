@@ -58,7 +58,7 @@ public class CarolList extends Fragment {
 
               @Override
               public void afterTextChanged(Editable s) {
-                  String text = search.getText().toString().toLowerCase(Locale.getDefault());
+                  String text = search.getText().toString().trim();
                   adapter.filter(text);
               }
         });
