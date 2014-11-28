@@ -19,7 +19,6 @@ public class CarolView extends Fragment {
     }
 
     public void setCarolText(String carolText) {
-        //Spanned str = Html.fromHtml(carolText);
         txtCarolText.setText(carolText);
     }
 
