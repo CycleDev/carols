@@ -12,6 +12,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".CarolDetail"/>
+
     </application>
 
 </manifest>
