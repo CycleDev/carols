@@ -14,10 +14,8 @@ import android.widget.ListView;
 import nao.cycledev.carols.adapter.CarolAdapter;
 import nao.cycledev.carols.repository.CarolRepository;
 import nao.cycledev.carols.repository.CarolXmlRepository;
-
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Locale;
 
 public class CarolList extends Fragment {
 

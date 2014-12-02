@@ -60,10 +60,12 @@ public class CarolAdapter extends BaseAdapter {
     public void filter(String str) {
         str = str.toLowerCase();
         carols.clear();
-        if (str.length() == 0) {
+        if (str.length() == 0)
+        {
             carols.addAll(arraylist);
         }
-        else {
+        else
+        {
             for (Carol item : arraylist)
             {
                 if (item.getTitle().toLowerCase().contains(str)) {
