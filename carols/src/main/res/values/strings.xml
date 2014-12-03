@@ -1,6 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Колядки</string>
     <string name="action_settings">Настройки</string>
     <string name="search">Пошук ...</string>
     <string name="app_title">Україна колядує</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

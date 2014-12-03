@@ -4,4 +4,8 @@
         ...
     </style>
 
+    <style name="SplashScreenTheme" parent="android:Theme.Holo.Light.NoActionBar">
+
+    </style>
+
 </resources>

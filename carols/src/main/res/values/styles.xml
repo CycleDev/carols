@@ -4,4 +4,8 @@
         ...
     </style>
 
+    <style name="SplashScreenTheme" parent="android:Theme.Light.NoTitleBar">
+
+    </style>
+
 </resources>

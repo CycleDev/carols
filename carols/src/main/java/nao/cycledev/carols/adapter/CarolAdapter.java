@@ -9,20 +9,26 @@ import android.widget.TextView;
 import nao.cycledev.carols.R;
 import nao.cycledev.carols.model.Carol;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 public class CarolAdapter extends BaseAdapter {
 
-    private List<Carol> carols;
+    private List<Carol> carols = new ArrayList<Carol>();
     private ArrayList<Carol> arraylist = new ArrayList<Carol>();
     private LayoutInflater layoutInflater;
 
     public CarolAdapter(Context context, List<Carol> carols) {
-        this.carols = carols;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         arraylist.addAll(carols);
+
+        Collections.sort(arraylist, new Comparator<Carol>() {
+            @Override
+            public int compare(Carol s1, Carol s2) {
+                return s1.getTitle().compareToIgnoreCase(s2.getTitle());
+            }
+        });
+
+        this.carols.addAll(arraylist);
     }
 
     @Override
@@ -73,6 +79,7 @@ public class CarolAdapter extends BaseAdapter {
                 }
             }
         }
+
         notifyDataSetChanged();
     }
 }
